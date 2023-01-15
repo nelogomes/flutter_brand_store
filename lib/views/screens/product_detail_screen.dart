@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_brand_store/common/app_colors.dart';
 import 'package:flutter_brand_store/models/product.dart';
+import 'package:flutter_brand_store/views/widgets/size_item.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class ProductDetailScreen extends StatelessWidget {
+class ProductDetailScreen extends HookWidget {
   const ProductDetailScreen({super.key, required this.product});
 
   final Product product;
@@ -11,28 +13,6 @@ class ProductDetailScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final Size screenWidth = MediaQuery.of(context).size;
-    final Size screenHeight = MediaQuery.of(context).size;
-
-    List<Widget> buildSizeItem() {
-      return product.productSize.map(((e) {
-        return Container(
-          alignment: Alignment.center,
-          width: 45,
-          height: 44,
-          decoration: BoxDecoration(
-            color: AppColors.secondary,
-            borderRadius: BorderRadius.circular(12),
-          ),
-          child: Text(
-            e.toString().split('.')[1],
-            style: const TextStyle(
-              color: Colors.white,
-              fontSize: 24,
-            ),
-          ),
-        );
-      })).toList();
-    }
 
     return Scaffold(
       appBar: AppBar(
@@ -84,10 +64,7 @@ class ProductDetailScreen extends StatelessWidget {
                   fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 20),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: buildSizeItem(),
-            ),
+            SizeItem(product: product),
             const SizedBox(height: 28),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
