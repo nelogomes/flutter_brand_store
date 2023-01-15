@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_brand_store/common/app_colors.dart';
 import 'package:flutter_brand_store/views/screens/home_screen.dart';
+import 'package:flutter_brand_store/views/screens/product_detail_screen.dart';
 
 void main() => runApp(const MyApp());
 
@@ -23,8 +24,8 @@ class MyApp extends StatelessWidget {
           color: Colors.transparent,
         ),
       ),
-      title: 'Material App',
       home: const HomeScreen(),
+      title: 'Material App',
     );
   }
 }

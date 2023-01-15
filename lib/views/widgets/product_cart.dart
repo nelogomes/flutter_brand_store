@@ -33,7 +33,7 @@ class ProductCart extends StatelessWidget {
                 width: 36,
                 height: 36,
                 child: GestureDetector(
-                  onTap: () => {print(index)},
+                  onTap: () => {},
                   child: Container(
                     padding: const EdgeInsets.all(5),
                     decoration: const BoxDecoration(

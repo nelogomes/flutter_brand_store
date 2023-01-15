@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_brand_store/models/product.dart';
 import 'package:flutter_brand_store/resources/app_data.dart';
+import 'package:flutter_brand_store/utils/custom_page_route.dart';
+import 'package:flutter_brand_store/views/screens/product_detail_screen.dart';
 import 'package:flutter_brand_store/views/widgets/product_cart.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
@@ -20,7 +22,15 @@ class ProductList extends StatelessWidget {
           itemBuilder: (context, index) {
             Product product = AppData.products[index];
             return GestureDetector(
-              onTap: () {},
+              onTap: () {
+                Navigator.push(
+                    context,
+                    CustomPageRoute(
+                      child: ProductDetailScreen(
+                        product: product,
+                      ),
+                    ));
+              },
               child: Container(
                 color: Colors.transparent,
                 child: ProductCart(

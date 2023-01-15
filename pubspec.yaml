@@ -70,6 +70,7 @@ flutter:
     - assets/icons/Settings.svg
     - assets/icons/toCart.svg
     - assets/icons/Bag.svg
+    - assets/icons/Back.svg
 
     # images
     - assets/images/1.png
